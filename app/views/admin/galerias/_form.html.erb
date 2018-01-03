@@ -1,0 +1,16 @@
+<%= form_with(model: @galeria, url:{action: "criar", controller: "galerias"}, remote: true) do |form| %>
+
+    <%= form.hidden_field :veiculo_id, id: :admin_galeria_veiculo_id, value: @veiculo.id %>
+    <div class="form-group">
+        <div class="row">
+            <div class="col-md-10">
+                <%= form.file_field :foto, id: :admin_galeria_foto, class: "form-control" %>
+                <small>Largura 700 Altura 700 (minimo)</small>
+            </div>
+            <div class="col-md-2">
+                <%= form.submit class: "btn btn btn-primary" %>
+            </div>
+        </div>
+    </div>
+
+<% end %>

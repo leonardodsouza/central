@@ -1,0 +1,58 @@
+@import "bootstrap";
+@import "font-awesome-sprockets";
+@import "font-awesome";
+@import "lightgallery";
+@import "corretora/home";
+@import "admin/dashboard";
+@import "site/veiculos";
+
+main{
+    margin-top: 50px;
+}
+
+.tab-content{
+    min-height: 500px;
+    border-left: 1px solid #ddd;
+    border-right: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+    padding: 20px;
+    background: #fff;
+}
+.nav-link-custom{
+    color: 	#D6741A;
+    padding-top: 60px;
+    font-size: 20px;
+    font-weight: bold;
+}
+.link-footer{
+    padding: 20px;
+    color: 	#ffffff;
+    font-weight: bold;
+}
+.link-footer:hover{
+    color: 	#ffffff;
+    font-weight: bold;
+}
+.nav-link-custom:hover{
+    color: 	rgb(110, 105, 99);
+}
+
+@media (max-width: 767px) {
+    #social{
+        display: none;
+    }
+    #carousel{
+        display: none;
+    }
+    #dica{
+        display: none;
+    }
+    .nav-link-custom {
+        display: none;
+    }
+    .link-footer,
+    .sugestao,
+    .random{
+        display: none;
+    }
+}

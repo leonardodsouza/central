@@ -1,0 +1,55 @@
+<%= image_tag  "logo.png", class: "mb-3 ml-3" %>
+
+<ul class="nav nav-pills flex-column">
+  
+    
+
+  <li class="nav-item">
+      <%= link_to admin_dashboard_path, class: "nav-link" do %>
+      <i class="fa fa-dashboard" aria-hidden="true"></i>
+      Dashboard
+      <%end%>
+  </li>
+
+  <li class="nav-item">
+    <%= link_to admin_veiculos_path, class: "nav-link" do %>
+    <i class="fa fa-car" aria-hidden="true"></i>
+    Veículos
+    <%end%>
+  </li>
+
+  <li class="nav-item">
+    <%= link_to admin_artigos_path, class: "nav-link" do %>
+      <i class="fa fa-file" aria-hidden="true"></i>
+      Artigos
+    <%end%>
+  </li>
+
+  <li class="nav-item">
+    <%= link_to admin_clientes_path, class: "nav-link" do %>
+      <i class="fa fa-user" aria-hidden="true"></i>
+      Dicas
+    <%end%>
+  </li>
+
+  <li class="nav-item">
+    <%= link_to admin_banners_path, class: "nav-link" do %>
+      <i class="fa fa-picture-o" aria-hidden="true"></i>
+      Banners
+    <%end%>
+  </li>
+
+  <li class="nav-item">
+    <%= link_to admin_usuarios_path, class: "nav-link" do %>
+      <i class="fa fa-file" aria-hidden="true"></i>
+      Usuários
+    <%end%>
+  </li>
+ 
+   <li class="nav-item">
+      <%= link_to admin_simulacoes_path, class: "nav-link" do %>
+        <i class="fa fa-thumbs-up" aria-hidden="true"></i>
+        Simulações
+      <%end%>
+    </li>
+</ul>

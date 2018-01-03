@@ -1,0 +1,2 @@
+module Corretora::SimulacoesHelper
+end

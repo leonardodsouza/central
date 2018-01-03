@@ -1,0 +1,48 @@
+<nav aria-label="breadcrumb" role="navigation">
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item"><%= link_to  "Dashboard", admin_dashboard_path %></li>
+        <li class="breadcrumb-item"><%= link_to  "Artigos", admin_artigos_path %></li>
+        <li class="breadcrumb-item active" aria-current="page">Novo</li>
+    </ol>
+</nav>
+<%= form_with(model: @artigo, url:{action: "criar", controller: "artigos"}) do |form| %>
+
+      <% if @artigo.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= pluralize(@artigo.errors.count, "error") %> prohibited this admin_artigo from being saved:</h2>
+          <ul>
+            <% @artigo.errors.full_messages.each do |message| %>
+              <li><%= message %></li>
+            <% end %>
+          </ul>
+        </div>
+      <% end %>
+
+      <div class="form-group">
+          <%= form.label :foto %>
+          <%= form.file_field :foto, id: :admin_artigo_foto, class: "form-control" %>
+      </div>
+
+      <div class="form-group">
+        <%= form.label :titulo %>
+        <%= form.text_field :titulo, id: :admin_artigo_titulo, class: "form-control", placeholder: "Título do artigo"%>
+        <small id="titulo" class="form-text text-muted">Título do artigo</small>
+      </div>
+
+      <div class="form-group">
+        <%= form.label :resumo %>
+        <%= form.text_area :resumo, id: :admin_artigo_resumo, class: "form-control", placeholder: "Resumo do artigo"%>
+        <small id="titulo" class="form-text text-muted">Faça um beve resumo de até 3 linhas</small>
+      </div>
+
+      <div class="form-group">
+        <%= form.label :texto %>
+        <%= form.cktext_area :texto, id: :admin_artigo_texto, class: "form-control", placeholder: "Texto do artigo" %>
+      </div>
+
+      <div class="form-group">
+        <%= form.submit class: "btn btn-primary" %>
+        <%= link_to  "Cancelar", admin_artigos_path, class: "btn btn-secondary"  %>
+      </div>
+
+<% end %>

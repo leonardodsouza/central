@@ -1,0 +1,88 @@
+<% if notice.present? %>
+  <p class="alert alert-primary" role="alert"><%= notice %></p>
+<%end%>
+
+<nav aria-label="breadcrumb" role="navigation">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item"><%= link_to  "Dashboard", admin_dashboard_path %></li>
+    <li class="breadcrumb-item"><%= link_to  "Veículos", admin_veiculos_path %></li>
+    <li class="breadcrumb-item active" aria-current="page">Novo</li>
+  </ol>
+</nav>
+
+<ul class="nav nav-tabs" id="myTab" role="tablist">
+  <li class="nav-item">
+    <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Descrição</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Fotos</a>
+  </li>
+</ul>
+
+<div class="tab-content" id="myTabContent">
+  <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+    <%= form_with(model: @veiculo, url:{action: "criar", controller: "veiculos"}) do |form| %>
+
+      <% if @veiculo.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= pluralize(@veiculo.errors.count, "error") %> prohibited this admin_veiculo from being saved:</h2>
+          <ul>
+            <% @veiculo.errors.full_messages.each do |message| %>
+              <li><%= message %></li>
+            <% end %>
+          </ul>
+        </div>
+      <% end %>
+
+      <div class="form-group">
+          <%= form.label :foto %>
+          <%= form.file_field :foto, id: :admin_veiculo_foto, class: "form-control" %>
+          <small>Largura 700 Altura 700 (minimo)</small>
+      </div>
+
+      <div class="form-group">
+        <%= form.label :categoria %>
+        <%= form.select :categoria ,[["Carro", "Carro"],["Motocicleta", "Motocicleta"],["Caminhão", "Caminhão"]], {prompt: "Categoria"},{ class: "form-control"} %>
+      </div>
+
+      <div class="form-group">
+        <%= form.label :marca %>
+        <%= form.text_field :marca, id: :admin_veiculo_marca, class: "form-control", placeholder: "Marca do veículo"%>
+        <small id="marca" class="form-text text-muted">marca do veículo</small>
+      </div>
+
+      <div class="form-group">
+        <%= form.label :modelo %>
+        <%= form.text_field :modelo, id: :admin_veiculo_modelo, class: "form-control", placeholder: "Modelo do veículo" %>
+      </div>
+
+      <div class="form-group">
+        <%= form.label :tipo %>
+        <%= form.select :tipo ,[["Básico", "Básico"],["Completo", "Completo"]], {prompt: "Tipo"},{ class: "form-control"} %>
+      </div>
+
+      <div class="form-group">
+        <%= form.label :preco %>
+        <%= form.text_field :preco, id: :admin_veiculo_preco, class: "form-control", placeholder: "Marca do veículo"%>
+        <small id="marca" class="form-text text-muted">Preço ex.: 20.000,00</small>
+      </div>
+
+      <div class="form-group">
+        <%= form.label :descricao %>
+        <%= form.cktext_area :descricao, id: :admin_veiculo_descricao, class: "form-control", placeholder: "Descrição do veículo" %>
+      </div>
+
+      <div class="form-group">
+        <%= form.submit class: "btn btn-primary" %>
+        <%= link_to  "Cancelar", admin_veiculos_path, class: "btn btn-secondary"  %>
+      </div>
+
+    <% end %>
+  </div>
+  
+  <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+    <div class="alert alert-primary" role="alert">
+      Salve a descrição do veículo antes
+    </div>
+  </div>
+</div>

@@ -1,0 +1,38 @@
+<div class="container mt-3 mb-3">
+    <div class="row"> 
+        <div class="col-md-9">
+            <div class="card-header mb-3">
+                <div class="social-likes social-likes_vertical float-right" data-counters="no" data-url="www.humanizerh.com.br" data-title="Veículo">
+                <button type="button" class="facebook btn btn-primary"> <i class="fa fa-share-alt" aria-hidden="true"></i> Compartilhar</button>
+                </div>
+                <h3 class="card-title"><%= @artigo.titulo %></h3>
+                <h5 class="card-subtitle mb-2 text-muted"><%= @artigo.created_at.strftime("%d/%m/%Y") %></h5>
+            </div>
+            <div class="card-header bg-light">
+                <div class="card-body">
+                    <%= raw(@artigo.resumo) %>
+                    <%= image_tag @artigo.foto.url(:grande), class: "img-fluid" %>
+                    <%= raw(@artigo.texto) %>
+                </div>
+            </div>
+        </div>    
+        <div class="col-md-3">
+            <div class="row random">
+                <% @random.each do |veiculo| %>
+                <div class="col-md-12 mb-3">
+                    <div class="card bg-light">
+                        <%= link_to site_veiculo_path(veiculo) do %>
+                            <%= image_tag veiculo.foto.url(:medium), class:"card-img-top" %>
+                        <%end%>    
+                        <div class="card-body">
+                            <h6 class="card-title">R$ <%= veiculo.preco %></h6>
+                            <h6 class="card-subtitle mb-2 text-muted"><%= veiculo.tipo %></h6>
+                            <%= link_to  "Descrição", site_veiculo_path(veiculo), class: "btn btn-secondary btn-block" %>
+                        </div>
+                    </div>
+                </div>
+                <%end%>
+            </div>
+        </div>
+    </div>
+</div>    

@@ -1,0 +1,38 @@
+<div class="container">
+    <div class="row"> 
+        <div class="col-md-9">
+            <% if notice.present? %>
+                <p class="alert alert-primary" role="alert"><%= notice %></p>
+            <%end%>
+            <div class="card-header mt-3 mb-3">
+                <h4 class="card-title">Envie uma mensagem</h4>
+                <h5 class="card-subtitle mb-2 text-muted">Ou ligue para 55 3512 1234</h5>
+            </div>
+            <div class="card bg-light mb-3">
+                <div class="card-body">
+
+                    <%= render  "site/contatos/form" %>
+                </div>
+            </div>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3526.965871883689!2d-54.48579135609743!3d-27.8723187!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94f9343677b1372f%3A0xfb949802356d9973!2sCentral+Ve%C3%ADculos!5e0!3m2!1spt-BR!2sbr!4v1514362433590" width="100%" height="520" frameborder="0" style="border:0" allowfullscreen></iframe>
+        </div>
+        <div class="col-md-3 mt-3">
+            <div class="row random">
+                <% @random.each do |veiculo| %>
+                <div class="col-md-12 mb-3">
+                    <div class="card bg-light">
+                        <%= link_to site_veiculo_path(veiculo) do %>
+                            <%= image_tag veiculo.foto.url(:medium), class:"card-img-top" %>
+                        <%end%>    
+                        <div class="card-body">
+                            <h6 class="card-title">R$ <%= veiculo.preco %></h6>
+                            <h6 class="card-subtitle mb-2 text-muted"><%= veiculo.tipo %></h6>
+                            <%= link_to  "Descrição", site_veiculo_path(veiculo), class: "btn btn-secondary btn-block" %>
+                        </div>
+                    </div>
+                </div>
+                <%end%>
+            </div>
+        </div>
+    </div>
+</div>

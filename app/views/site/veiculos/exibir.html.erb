@@ -1,0 +1,127 @@
+<div class="col-md-12 pl-3 pr-3 mt-3">
+<div class="row"> 
+    <div class="col-md-9">
+        <% if notice.present? %>
+            <p class="alert alert-primary" role="alert"><%= notice %></p>
+        <%end%>
+        <div class="card-header mb-3">
+            <div class="social-likes social-likes_vertical float-right" data-counters="no" data-url="www.humanizerh.com.br" data-title="Veículo">
+                <button type="button" class="facebook btn btn-primary"> <i class="fa fa-share-alt" aria-hidden="true"></i> Compartilhar</button>
+            </div>
+            <h4 class="card-title"><%= @veiculo.modelo %></h4>
+            <h6 class="card-subtitle mb-2 text-muted"><%= @veiculo.tipo %></h6>
+        </div>
+
+        <div class="card-header mb-3 bg-light">
+            <div class="card-body">
+
+                <div class="gallery">  
+                    <div class="row"> 
+                        <div class="col-md-7 mb-3">
+                            <%= image_tag @veiculo.foto.url(:capa), class: "img-fluid" %>
+                        </div>
+                        <div class="col-md-5 mb-3">
+                            <div id="lightgallery"> 
+                                <% @veiculo.galerias.each do |galeria| %>
+                                    <div class="thumb-gallery pull-left" data-responsive="<%= galeria.foto.url(:grande) %>" data-src="<%= galeria.foto.url(:grande) %>" >
+                                        <%= link_to (image_tag galeria.foto.url(:thumb)), nil,  class: "img-fluid"%>
+                                    </div>
+                                <%end%>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row"> 
+                    <div class="col-md-12">
+                        <span class="form-text text-muted"><%= @veiculo.marca%> <%= @veiculo.modelo%> <%= @veiculo.tipo %></span>
+                        <h4 class="card-title">R$ <%= @veiculo.preco %></h4>
+                        <%= raw(@veiculo.descricao) %>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row random">
+            <div class="col-md-12 mb-3">
+                <h3>
+                    Sugestões
+                    <small class="text-muted">Separamos algumas sugestões</small>
+                </h3>
+                <hr>
+            </div>        
+            <% @random.each do |veiculo| %>
+            <div class="col-md-3 mb-3">
+                <div class="card bg-light">
+                    <%= link_to site_veiculo_path(veiculo) do %>
+                        <%= image_tag veiculo.foto.url(:medium), class:"card-img-top" %>
+                    <%end%>    
+                    <div class="card-body">
+                        <h6 class="card-title">R$ <%= veiculo.preco %></h6>
+                        <h6 class="card-subtitle mb-2 text-muted"><%= veiculo.tipo %></h6>
+                        <%= link_to  "Descrição", site_veiculo_path(veiculo), class: "btn btn-secondary btn-block" %>
+                    </div>
+                </div>
+            </div>
+            <%end%>
+        </div>  
+    </div>
+    <div class="col-md-3">
+        <div class="card text-white bg-dark mb-3" style="max-width: 20rem;">
+        <h5 class="card-header">Mande sua proposta</h5>
+            <div class="card-body">
+
+            <%= form_tag(action: "enviar_proposta", controller: "veiculos") do %>
+
+                <%= hidden_field_tag :link, nil, value: full_url_for %>
+                <%= hidden_field_tag :modelo, nil, value: @veiculo.modelo %>
+                <%= hidden_field_tag :id, nil, value: @veiculo.id %>
+
+                <div class="form-group">
+                    <%= label_tag :nome %>
+                    <%= text_field_tag :nome, nil, class: "form-control", placeholder: "Digite seu nome" , required: true%>
+                </div>     
+                
+                <div class="form-group">
+                    <%= label_tag :email %>
+                    <%= text_field_tag :email, nil, class: "form-control", placeholder: "Digite seu email" , required: true%>
+                </div>
+            
+                <div class="form-group">
+                    <%= label_tag :telefone %>
+                    <%= text_field_tag :telefone, nil, class: "form-control", placeholder: "Digite seu telefone" , required: true%>
+                </div>
+        
+                <div class="form-group">
+                    <%= label_tag :mensagem %>
+                    <%= text_area_tag :mensagem, nil, class: "form-control", placeholder: "Escreva sua mensagem" , required: true%>
+                </div>
+        
+        
+                <div class="form-group">
+                    <%= submit_tag "Enviar", class: "btn btn-primary" %>
+                </div>
+            
+            <% end %>
+                    
+            </div>
+        </div> 
+        <%= link_to corretora_home_path  do%>
+        <div class="card bg-dark text-white">
+            
+                <%= image_tag  "seguros.jpg", class: "card-img" %>
+            
+        <div class="card-img-overlay">
+            <h5 class="card-title">Conheça nossos seguros</h5>
+            <p class="card-text">Fique tranquilo</p>
+        </div>
+        </div>
+        <%end%>
+        
+       
+    </div>
+</div>
+</div>
+<script type="text/javascript">
+    $(document).ready(function(){
+        $('#lightgallery').lightGallery();
+    });
+</script>

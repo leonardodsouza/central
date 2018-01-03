@@ -1,0 +1,16 @@
+<nav aria-label="breadcrumb" role="navigation">
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item"><%= link_to  "Dashboard", admin_dashboard_path %></li>
+        <li class="breadcrumb-item"><%= link_to  "Dicas", admin_clientes_path %></li>
+        <li class="breadcrumb-item active" aria-current="page">Exibir</li>
+    </ol>
+</nav>
+<div class="row mt-3">
+        <div class="col-md-4 mb-3">
+            <%= image_tag @cliente.foto.url(:grande), class: "rounded img-fluid" %>
+        </div>
+        <div class="col-md-8 mb-3">
+            <h3 class="card-title"><%= @cliente.nome %></h3>
+            <%= raw(@cliente.texto) %>
+        </div>
+    </div>

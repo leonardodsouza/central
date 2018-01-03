@@ -1,0 +1,16 @@
+<table class="table">
+<tbody>
+    <% @galerias.each do |galeria| %>
+    <tr>
+        <td >
+            <%= image_tag galeria.foto.url(:thumb), class: "img-thumbnail" %>
+        </td>
+        <td style="width: 5%">
+            <%= link_to admin_galeria_path(galeria), remote: true, method: :delete, data: { confirm: 'Deseja apagar essa foto?' }, class: "btn btn btn-danger" do%>
+            <i class="fa fa-times" aria-hidden="true"></i>
+            <%end%>
+        </td>
+    </tr>
+    <% end %>
+</tbody>
+</table>

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <title>Central de Veículos</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <%= csrf_meta_tags %>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+    <link href='https://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700' rel='stylesheet' type='text/css'>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body id="body">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <div class="container">
+        <%= link_to (image_tag  "logo.png"),site_veiculos_path, class: "navbar-brand" %>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+          <div class="navbar-nav mr-auto">
+              
+          </div>
+          <div class="navbar-nav">    
+            <%= link_to  "HOME", site_home_path, class: "nav-item nav-link" %>
+            <%= link_to  "VEÍCULOS", site_veiculos_path, class: "nav-item nav-link" %>
+            <%= link_to  "ARTIGOS", site_artigos_path, class: "nav-item nav-link" %>
+            <%= link_to  "SEGURO", corretora_home_path, class: "nav-item nav-link" %>
+            <%= link_to  "CONTATO", site_contato_path, class: "nav-item nav-link" %>
+            <a href= "#fone", class= "nav-item nav-link">TELEFONE</a>
+          </div>
+        </div>
+      </div>
+    </nav>
+    
+    <%= yield %>
+  
+    <section style="padding-top: 80px; padding-bottom: 80px;" class="bg-dark">
+      <div class="container">
+        <div class="text-center">
+            <h1 class="text-white">VENHA NOS VISITAR</h1>
+            <h5 class="text-white">AVENIDA BORGES DE MEDEIROS, 248 SANTA ROSA </h5>
+        </div>
+        <div class="text-center mt-3 pb-3">
+          <%= link_to  "Entre em contato", site_contato_path, class: "btn btn-outline-secondary btn-lg" %>
+        </div>
+      </div>      
+    </section>
+    <footer class="footer bg-secondary">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-4">
+              <span id="fone" class="copyright">
+                Fones: (55) 35121858 / 996418480 / 999763226
+              </span>
+            </div>
+            <div class="col-md-4">
+              <ul class="list-inline social-buttons">
+                <li class="list-inline-item">
+                  <a href="#">
+                    <i class="fa fa-twitter"></i>
+                  </a>
+                </li>
+                <li class="list-inline-item">
+                  <a href="#">
+                    <i class="fa fa-facebook"></i>
+                  </a>
+                </li>
+                <li class="list-inline-item">
+                  <a href="#">
+                    <i class="fa fa-linkedin"></i>
+                  </a>
+                </li>
+              </ul>
+            </div>
+            <div class="col-md-4">
+              <ul class="list-inline quicklinks">
+                <li class="list-inline-item">
+                  <a>Central de Veículos</a>
+                </li>
+                <li class="list-inline-item">
+                  <a href="#body">TOPO</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        </footer>
+  </body>
+</html>

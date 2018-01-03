@@ -1,0 +1,52 @@
+<div class="title col-md-12 bg-secondary">
+    <div class="row text-center text-white">
+        <div class="col-md-12">
+            <h3 class="text-uppercase">Conteúdo especialmente preparado para você</h3>
+            <hr class="divider"></hr>
+        </div>
+    </div> 
+</div>
+<div class="container mt-3 mb-3">
+<div class="row">
+    <div class="col-md-9">
+        <% @artigos.each do |artigo| %>
+        <div class="row mb-3">
+            
+                <div style="width: 100%;" class="card-header">
+                    <div style="width: 30%; float: left;" class="card-body">
+                        <%= link_to site_artigo_path(artigo) do %>
+                        <%= image_tag artigo.foto.url(:medium), class: "img-fluid rounded" %>
+                    </div>
+                    <%end%>
+                    <div style="width: 70%; float: right;" class="card-body">
+                        <h5 class="card-title"><%= link_to artigo.titulo, site_artigo_path(artigo), class:"text-dark" %></h5>
+                        <h6 class="card-subtitle mb-2 text-muted"><%= artigo.created_at.strftime("%d/%m/%Y") %></h6>
+                        <%= truncate(artigo.resumo, :length => 100)  %>
+                    </div>
+                </div>
+            
+        </div>
+        <%end%>
+        <%= will_paginate @artigos, renderer: WillPaginate::ActionView::BootstrapLinkRenderer %>
+    </div>
+
+    <div class="col-md-3">
+        <div class="row random">
+            <% @random.each do |veiculo| %>
+            <div class="col-md-12 mb-3">
+                <div class="card bg-light">
+                    <%= link_to site_veiculo_path(veiculo) do %>
+                        <%= image_tag veiculo.foto.url(:medium), class:"card-img-top" %>
+                    <%end%>    
+                    <div class="card-body">
+                        <h6 class="card-title">R$ <%= veiculo.preco %></h6>
+                        <h6 class="card-subtitle mb-2 text-muted"><%= veiculo.tipo %></h6>
+                        <%= link_to  "Descrição", site_veiculo_path(veiculo), class: "btn btn-secondary btn-block" %>
+                    </div>
+                </div>
+            </div>
+            <%end%>
+        </div>
+    </div>
+</div>
+</div>

@@ -1,0 +1,17 @@
+<nav aria-label="breadcrumb" role="navigation">
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item"><%= link_to  "Dashboard", admin_dashboard_path %></li>
+        <li class="breadcrumb-item"><%= link_to  "Simulações", admin_simulacoes_path %></li>
+        <li class="breadcrumb-item active" aria-current="page">Exibir</li>
+    </ol>
+</nav>
+<div class="card">
+    <div class="card-body">
+        <h3 class="card-title"><%= @simulacao.tipo %></h3>
+        <h5 class="card-subtitle mb-2 text-muted"><%= @simulacao.created_at.strftime("%d/%m/%Y") %></h5>
+        <hr>
+        <%= @simulacao.nome %><br>
+        <%= @simulacao.email %><br>
+        <%= @simulacao.telefone %><br>
+    </div>
+</div>

@@ -1,0 +1,17 @@
+<nav aria-label="breadcrumb" role="navigation">
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item"><%= link_to  "Dashboard", admin_dashboard_path %></li>
+        <li class="breadcrumb-item"><%= link_to  "Banners", admin_banners_path %></li>
+        <li class="breadcrumb-item active" aria-current="page">Exibir</li>
+    </ol>
+</nav>
+<div class="card bg-dark text-white">
+    <%= image_tag @banner.foto.url(:grande), class: "card-img" %>
+    <div class="card-img-overlay">
+        <h1 class="card-title"><%= @banner.titulo %></h1>
+        <h2 class="card-text"><%= @banner.legenda %></h2>
+    </div>
+</div>
+
+
+

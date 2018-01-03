@@ -1,0 +1,35 @@
+<nav aria-label="breadcrumb" role="navigation">
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item"><%= link_to  "Dashboard", admin_dashboard_path %></li>
+        <li class="breadcrumb-item active" aria-current="page">Simulações</li>
+    </ol>
+</nav>
+<table class="table table-bordered table-responsive-sm">
+    <thead class="thead-light">
+        <tr>
+        <th  style="width: 5%;" scope="col">Cod.</th>
+        <th  scope="col">Nome</th>
+        <th  style="width: 5%;" colspan="2"></th>
+        </tr>
+    </thead>
+
+    <tbody>
+        <% @simulacoes.each do |simulacao| %>
+        <tr>
+            <td><%= simulacao.id %></td>
+            <td><%= simulacao.nome %> <br> <small class="text-muted"><%= simulacao.created_at.strftime("%d/%m/%Y") %></small></td>
+            <td>
+                <%= link_to admin_simulacao_path(simulacao), class: "btn btn-secondary" do %>
+                    <i class="fa fa-eye" aria-hidden="true"></i>
+                <%end%>
+            </td>
+            <td>
+                <%= link_to admin_simulacao_path(simulacao), method: :delete, data: { confirm: 'Deseja apagar esse registro?' }, class: "btn btn-danger" do %>
+                    <i class="fa fa-times" aria-hidden="true"></i>
+                <%end%>
+            </td>
+        </tr>
+        <% end %>
+    </tbody>
+</table>
+<%= will_paginate @simulacoes, renderer: WillPaginate::ActionView::BootstrapLinkRenderer %>

@@ -1,0 +1,49 @@
+<% if notice.present? %>
+<div class="alert alert-primary alert-dismissible fade show" role="alert">
+    <%= notice %>
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+    </button>
+</div>
+<%end%>
+
+<h1>Dashboard</h1>
+
+<section class="row">
+  <div class="col-sm-4 mb-3">
+    <div style="height: 200px;" class="card text-white bg-primary ">
+    <div class="card-header"><i class="fa fa-car" aria-hidden="true"></i> Veículos</div>
+    <div class="card-body">
+      <p class="card-text">Carros: <%= carros %><br>
+     Motos: <%= motos %> <br>
+     Outros:  <%= outros %></p>
+    </div>
+    </div>
+  </div>
+  <div class="col-sm-4 mb-3">
+    <div style="height: 200px;" class="card text-white bg-success ">
+    <div class="card-header"><i class="fa fa-thumbs-up" aria-hidden="true"></i> Simulações</div>
+    <div class="card-body">
+      <h4 class="card-title">Total: <%= simulacoes %></h4>
+    </div>
+  </div>
+  </div>
+  <div class="col-sm-4 mb-3">
+    <div style="height: 200px;" class="card text-white bg-danger ">
+    <div class="card-header"><i class="fa fa-bar-chart" aria-hidden="true"></i> Visitas</div>
+    <div class="card-body">
+      <h4 class="card-title">Visualizações: <%= total_visualizacoes %></h4>
+    </div>
+  </div>
+  </div>
+</section>        
+
+<section>
+  <div class="card mt-3">
+    <div class="card-body">
+      <%= line_chart @visitas.group_by_day_of_week(:created_at, format: "%a").count %>
+    </div>
+  </div>
+  <%= link_to  "Reininiar contagem", admin_graficos_path, class: "btn btn-danger" %>
+  <small>Recomenda-se reiniciar uma vez por mês</small>
+</section>

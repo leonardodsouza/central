@@ -1,0 +1,2 @@
+module Site::VeiculosHelper
+end

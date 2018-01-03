@@ -1,0 +1,257 @@
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
+    <div class="container">
+      <a href="#body">
+        <%= image_tag  "logo.png", class: "navbar-brand js-scroll-trigger" %>
+      </a>  
+      <button class="navbar-toggler btn btn-dark" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav text-uppercase ml-auto">
+
+          <li class="nav-item">
+            <a class="nav-link js-scroll-trigger" href="#empresa">EMPRESA</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link js-scroll-trigger" href="#auto">AUTO</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link js-scroll-trigger" href="#educacional">EDUCACIONAL</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link js-scroll-trigger" href="#residencia">RESIDÊNCIA</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link js-scroll-trigger" href="#aluguel">ALUGUEL</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link js-scroll-trigger" href="#condominio">CONDOMÍNIO</a>
+          </li>          
+          <li class="nav-item">
+            <a class="nav-link js-scroll-trigger" href="#contato">CONTATO</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+<!-- Header -->
+<header class="masthead">
+  <div class="container">
+    <div class="intro-text">
+      <div class="intro-lead-in">Bem vindo a</div>
+      <div class="intro-heading text-uppercase">Central corretora de Seguros</div>
+      <%= link_to  "SIMULADOR", corretora_novo_simulacao_path, remote: true, class: "btn btn-secondary btn-lg" %>
+    </div>
+  </div>
+</header>
+
+<section class="seguros bg-dark">
+    <div class="container">
+        <div class="row text-center text-white">
+            <div class="col-md-12">
+                <h3 class="text-uppercase">Seguros especialmente elaborados para as suas necessídades</h3>
+                <hr class="divider"></hr>
+            </div>
+        </div>    
+    </div>
+</section>
+
+<section id="empresa" class="section">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <%= image_tag  "about/1.jpg", class: "img-fluid img-thumbnail" %>
+            </div>
+            <div class="col-md-6">
+                <h1 class="text-uppercase">Para sua empresa</h1>
+                <p class="text-muted">O seguro empresarial foi criado especialmente para quem se preocupa com o seus negócio e quer segurança para sua empresa. Desenvolvido para ser a melhor opção de contratação para prestadores de serviços, estabelecimentos comerciais e atividades industriais, o seguro empresarial oferece diversas coberturas para proteger bem o seu negócio.</p>
+                <%= link_to  "SIMULADOR", corretora_novo_simulacao_path, remote: true, class: "btn btn-outline-secondary btn-lg" %>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="auto" class="section bg-light">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <h1 class="text-uppercase">Para o seu atomóvel</h1>
+                <p class="text-muted">Com o seguro auto você tem Proteção para seu veículo e tranquilidade para você, com benefícios para facilitar o seu dia a dia e econimizar o seu tempo. O seguro auto oferece cobertura especial, que consideram sua rotina e hábitos de utilização do veículo. Com ele você tem mais vantagens por um preço justo e ainda conta com um atendimento ágil e eficaz no caso de sinisto.</p>
+                <%= link_to  "SIMULADOR", corretora_novo_simulacao_path, remote: true, class: "btn btn-outline-secondary btn-lg" %>
+            </div>
+            <div class="col-md-6">
+                <%= image_tag  "about/2.jpg", class: "img-fluid img-thumbnail" %>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="educacional" class="section">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <%= image_tag  "about/3.jpg", class: "img-fluid img-thumbnail" %>
+            </div>
+            <div class="col-md-6">
+                <h1 class="text-uppercase">Para seus filhos</h1>
+                <p class="text-muted">O seguro educacional garante o estudo de crianças e adolescentes, do maternal até a conclusão do curso superior. Com a proteção financeira para auxiliar em caso de dificuldades dos pais ou responsáveis diante de uma situação de desemprego, morte ou invalidez, oferece diversas assistências aos alunos desde aulas particulares até assistência médica 24Horas trazendo tranquilidade para a Escola, Pais e Alunos.</p>
+                <%= link_to  "SIMULADOR", corretora_novo_simulacao_path, remote: true, class: "btn btn-outline-secondary btn-lg" %>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="residencia" class="section bg-light">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <h1 class="text-uppercase">Para sua residência</h1>
+                <p class="text-muted">Sua casa guarda sua história, as suas conquistas e tudo o que tem valor pra vacê. Por um valor muito pequeno, você protege o que tem grande valor para sua vida. E ainda conta com o mais completo pacote de serviços e assitência para resolver de um jeito simples e rápido aqueles probleminhas do dia a dia. Escolha o pacote que mais combina com sua necessidade e aproveite essa tranquilidade do seguro residencial.</p>
+                <%= link_to  "SIMULADOR", corretora_novo_simulacao_path, remote: true, class: "btn btn-outline-secondary btn-lg" %>
+            </div>
+            <div class="col-md-6">
+                <%= image_tag  "about/4.jpg", class: "img-fluid img-thumbnail" %>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="aluguel" class="section">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                    <%= image_tag  "about/5.jpg", class: "img-fluid img-thumbnail" %>
+            </div>
+            <div class="col-md-6">
+                <h1 class="text-uppercase">Alugue sem fiador</h1>
+                <p class="text-muted">Amelhor garantia na hora de alugar seu imóvel. O seguro Aluguel é o seguro de fiança locatícia feito na medida certa para facilitar a vida de proprietários e imóveis, de imobiliárias e de inquilinos, substituindo com vantagens o fiador. Com ele, você tem a certeza de receber o aluguel e até os demais encargos da locação mesmo que o inquilino fique inadimplente.</p>
+                <%= link_to  "SIMULADOR", corretora_novo_simulacao_path, remote: true, class: "btn btn-outline-secondary btn-lg" %>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="condominio" class="section bg-light">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <h1 class="text-uppercase">Para condomínios</h1>
+                <p class="text-dark">Ideal para quem gosta de acumular vantagens e não problemas, o seguro Condomínio oferece coberturas que protegem o condomínio, o síndico, os funcionários e o patrimônio dos condôminos. Contempla condomínios residenciais, comerciais, mistos, de escritório e/ou consultórios, flats ou apart-hotéis, com benefícions na contratação emergenciais gratuitos.</p>
+                <%= link_to  "SIMULADOR", corretora_novo_simulacao_path, remote: true, class: "btn btn-outline-secondary btn-lg" %>
+            </div>
+            <div class="col-md-6">
+                <%= image_tag  "about/6.jpg", class: "img-fluid img-thumbnail img-thumbnail mb-3" %>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="py-5">
+  <div class="container">
+      <div class="row">
+          <div class="col-md-4 col-sm-6 mb-3">
+              <a href="#">
+              <%= image_tag  "logos/1.png", class: "img-fluid d-block mx-auto" %>
+              </a>
+          </div>
+          <div class="col-md-4 col-sm-6 mb-3">
+              <a href="#">
+              <%= image_tag  "logos/2.png", class: "img-fluid d-block mx-auto" %>
+              </a>
+          </div>
+          <div class="col-md-4 col-sm-6 mb-3">
+              <a href="#">
+              <%= image_tag  "logos/3.png", class: "img-fluid d-block mx-auto" %>
+              </a>
+          </div>
+      </div>
+  </div>
+</section>
+
+<section class="bg-dark">
+    <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3526.965871883689!2d-54.48579135609743!3d-27.8723187!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94f9343677b1372f%3A0xfb949802356d9973!2sCentral+Ve%C3%ADculos!5e0!3m2!1spt-BR!2sbr!4v1514362433590" width="100%" height="520" frameborder="0" style="border:0" allowfullscreen></iframe>
+
+</section>
+
+<section id="contato" class="contato text-center text-white bg-dark">
+  <div class="container">
+  <div class="col-md-10 offset-md-1">
+    <div class="row">
+      <div class="col-lg-12 text-center">
+        <h1 class="section-heading text-uppercase">Contato</h1>
+        <h2 class="section-subheading text-muted">Entre em contato conosco</h2>
+        <p>Fones: (55) 35121858 / 996418480 / 999763226</p>
+      </div>
+    </div>
+    <%= form_tag(corretora_enviar_contato_path) do %>
+      <div class="row">
+        <div class="col-md-6">
+          <div class="form-group">
+            <%= text_field_tag :nome, nil, class: "form-control form-control-lg", placeholder: "Digite seu nome", required: true%>
+          </div>
+
+          <div class="form-group">
+              <%= email_field_tag :email, nil, class: "form-control form-control-lg", placeholder: "Digite seu email" , required: true%>
+          </div>
+
+          <div class="form-group">
+            <%= text_field_tag :telefone, nil, class: "form-control form-control-lg", placeholder: "Digite seu telefone" , required: true%>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="form-group">
+            <%= text_area_tag :mensagem, nil, rows: "6", class: "form-control form-control-lg", placeholder: "Escreva sua mensagem" , required: true%>
+          </div>
+        </div>
+        <div class="col-md-12 mt-3 mb-3">
+          <div class="form-group">
+            <%= submit_tag "Enviar mensagem", class: "btn btn-primary btn-lg text-uppercase" %>
+          </div>
+        </div>
+      </div>
+  <% end %>
+  </div>
+  </div>
+</section>
+
+<footer class="footer">
+<div class="container">
+  <div class="row">
+    <div class="col-md-4">
+      <span class="copyright">
+        Fones: (55) 35121858 / 996418480 / 999763226
+      </span>
+    </div>
+    <div class="col-md-4">
+      <ul class="list-inline social-buttons">
+        <li class="list-inline-item">
+          <a href="#">
+            <i class="fa fa-twitter"></i>
+          </a>
+        </li>
+        <li class="list-inline-item">
+          <a href="#">
+            <i class="fa fa-facebook"></i>
+          </a>
+        </li>
+        <li class="list-inline-item">
+          <a href="#">
+            <i class="fa fa-linkedin"></i>
+          </a>
+        </li>
+      </ul>
+    </div>
+    <div class="col-md-4">
+      <ul class="list-inline quicklinks">
+        <li class="list-inline-item">
+          <a>SUSEP 10.2003212.9</a>
+        </li>
+        <li class="list-inline-item">
+          <a href="#body">TOPO</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+</footer>
