@@ -1,5 +1,5 @@
 class Admin::UsuariosController < ApplicationController
-    before_action :autenticado
+    #before_action :autenticado
     layout 'admin/application'
     before_action :set_usuario, only: [:exibir, :editar, :atualizar, :excluir]
   
