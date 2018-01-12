@@ -1,5 +1,5 @@
 class EmailMailer < ActionMailer::Base
-    default from: "humanize@humanizerh.com.br"
+    default from: "contato@centralvec.com.br"
 
     def contato(nome, email, telefone, mensagem)
         @nome = nome
