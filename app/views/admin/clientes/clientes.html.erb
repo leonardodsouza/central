@@ -4,18 +4,10 @@
         <li class="breadcrumb-item active" aria-current="page">Dicas</li>
     </ol>
 </nav>
-<div class="row mb-3">
-    <div class="col-12">
-        <%= link_to admin_novo_cliente_path, class: "btn btn-primary float-right" do %>
-        <i class="fa fa-check" aria-hidden="true"></i>
-        Novo
-        <%end%> 
-    </div>
-</div>
 <table class="table table-bordered table-responsive-sm">
     <thead class="thead-light">
         <tr>
-        <th  style="width: 5%;" scope="col">Cod.</th>
+        <th  style="width: 5%;" scope="col">Posição</th>
         <th  scope="col">Nome</th>
         <th  style="width: 5%;" colspan="3"></th>
         </tr>
@@ -34,11 +26,6 @@
             <td>
                 <%= link_to admin_editar_cliente_path(cliente), class: "btn btn-primary" do %>
                     <i class="fa fa-edit" aria-hidden="true"></i>
-                <%end%>
-            </td>
-            <td>
-                <%= link_to admin_cliente_path(cliente), method: :delete, data: { confirm: 'Deseja apagar esse registro?' }, class: "btn btn-danger" do %>
-                    <i class="fa fa-times" aria-hidden="true"></i>
                 <%end%>
             </td>
         </tr>

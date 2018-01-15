@@ -5,7 +5,7 @@
         <li class="breadcrumb-item active" aria-current="page">Novo</li>
     </ol>
 </nav>
-<%= form_with(model: @banner, url:{action: "criar", controller: "banners"}) do |form| %>
+<%= form_with(model: @banner, local: true, url:{action: "criar", controller: "banners"}) do |form| %>
 
       <% if @banner.errors.any? %>
         <div id="error_explanation">

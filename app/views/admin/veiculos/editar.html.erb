@@ -20,18 +20,20 @@
 </ul>
 <div class="tab-content" id="myTabContent">
   <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
-    <%= form_with(model: @veiculo, url:{action: "atualizar", controller: "veiculos", id: @veiculo.id}) do |form| %>
+    <%= form_with(model: @veiculo, local: true, url:{action: "atualizar", controller: "veiculos", id: @veiculo.id}) do |form| %>
 
-      <% if @veiculo.errors.any? %>
-        <div id="error_explanation">
-          <h2><%= pluralize(@veiculo.errors.count, "error") %> prohibited this admin_veiculo from being saved:</h2>
-          <ul>
-            <% @veiculo.errors.full_messages.each do |message| %>
-              <li><%= message %></li>
-            <% end %>
-          </ul>
-        </div>
-      <% end %>
+    <% if @veiculo.errors.any? %>
+      <div class="alert alert-danger alert-dismissible fade show" role="alert">
+          <strong class="alert-heading">ERRO AO TENTAR SALVAR O VEÍCULO.</strong>
+          <hr>
+          <% @veiculo.errors.full_messages.each do |message| %>
+              <%= message %><br>
+          <% end %>
+          <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+          </button>
+      </div>
+  <% end %>
 
       <div class="form-group">
         <div class="row">

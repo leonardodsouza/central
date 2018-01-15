@@ -8,7 +8,7 @@ new w(this,a,g))})};d.fn.unmask=function(){return this.each(function(){d(this).d
 
 //mascaras
 $(document).on('turbolinks:load', function() {
-
+    $("#simulacao_telefone").mask("(99) 999999999");
     $("#telefone").mask("(99) 999999999");
 });
   

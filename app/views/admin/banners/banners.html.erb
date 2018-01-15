@@ -17,7 +17,7 @@
         <% @banners.each do |banner| %>
         <tr>
             <td><%= banner.id %></td>
-            <td><%= banner.titulo %> <br> <small class="text-muted"><%= banner.created_at.strftime("%d/%m/%Y") %></small></td>
+            <td><%= banner.titulo %> <br> <small class="text-muted"><%= banner.updated_at.strftime("%d/%m/%Y") %></small></td>
             <td>
                 <%= link_to admin_banner_path(banner), class: "btn btn-secondary" do %>
                     <i class="fa fa-eye" aria-hidden="true"></i>

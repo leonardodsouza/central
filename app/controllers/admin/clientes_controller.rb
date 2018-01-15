@@ -5,7 +5,7 @@ class Admin::ClientesController < ApplicationController
 
 
     def clientes
-        @clientes = Cliente.all.paginate(:page=> params[:page], :per_page => 20).order(created_at: :desc)
+        @clientes = Cliente.all.paginate(:page=> params[:page], :per_page => 20).order(created_at: :asc)
     end
 
     def exibir
