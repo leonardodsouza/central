@@ -2,7 +2,7 @@
     <div class="row"> 
         <div class="col-md-9">
             <div class="card-header mb-3">
-                <div class="social-likes social-likes_vertical float-right" data-counters="no" data-url="www.centralvec.com.br/site/artigos/<%= @artigo.id %>" data-title="Veículo">
+                <div class="social-likes social-likes_vertical float-right" data-counters="no" data-url= <%= full_url_for %> data-title="Veículo">
                 <button type="button" class="facebook btn btn-primary"> <i class="fa fa-share-alt" aria-hidden="true"></i> Compartilhar</button>
                 </div>
                 <h3 class="card-title"><%= @artigo.titulo %></h3>
