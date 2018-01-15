@@ -6,7 +6,7 @@ class EmailMailer < ActionMailer::Base
         @email = email
         @telefone = telefone
         @mensagem = mensagem
-        mail(to: 'leonardodsouza@gmail.com', subject: 'Contato (Veículos)')
+        mail(to: 'centraldeveiculosrs@yahoo.com.br', subject: 'Contato (Veículos)')
     end
 
     def proposta(link, modelo, nome, email, telefone, mensagem)
@@ -16,7 +16,7 @@ class EmailMailer < ActionMailer::Base
         @email = email
         @telefone = telefone
         @mensagem = mensagem
-        mail(to: 'leonardodsouza@gmail.com', subject: 'Contato (veículos)')
+        mail(to: 'centraldeveiculosrs@yahoo.com.br', subject: 'Contato (veículos)')
     end
 
 
@@ -25,7 +25,7 @@ class EmailMailer < ActionMailer::Base
         @email = email
         @telefone = telefone
         @mensagem = mensagem
-        mail(to: 'leonardodsouza@gmail.com', subject: 'Contato (Corretora)')
+        mail(to: 'centraldeveiculosrs@yahoo.com.br', subject: 'Contato (Corretora)')
     end
 
     def recuperar_senha(usuario)
