@@ -1,15 +1,10 @@
 <%= form_with(model: @simulacao, url:{action: "criar", controller: "simulacoes"}) do |form| %>
 <div class="modal-body">
     <div class="form-group">
-        <%= form.label :tipo %>
-        <%= form.select :tipo ,[
-        ["Empresarial", "Empresarial"],
-        ["Automóvel", "Automóvel"],
-        ["Educacional", "Educacional"],
-        ["Residencial", "Residencial"],
-        ["Aluguel", "Aluguel"],
-        ["Condomínio", "Condomínio"]
-        ], {prompt: "Tipo"},{ class: "form-control",required: true} %>
+    
+    <div class="form-group">
+        
+        <%= form.hidden_field :nome, value: "Viagem", class: "form-control", required: true, placeholder: "Digite seu nome"%>
     </div>
 
     <div class="form-group">

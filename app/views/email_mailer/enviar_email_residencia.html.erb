@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <h3>Simulação seguro residencial</h3>
+    <p>
+        <h3>Solicitante</h3>
+        <hr>
+        <strong>Nome:</strong> <%= @nome %><br>
+        <strong>E-mail para resposta:</strong> <%= @email %><br>
+        <strong>Telefone:</strong> <%= @telefone %><br>
+    </p>
+    <p>
+        <h3>Segurado</h3>
+        <hr>
+    <strong>Nome do segurado</strong>       <%=  @nome%><br>
+    <strong>E-mail</strong>       <%=  @email%><br>
+    <strong>Telefone</strong>       <%= @telefone%><br>
+    <strong>CPF</strong>       <%=  @cpf%><br>
+    <strong>Data de nascimento</strong>       <%=  @nascimento%><br>
+    <strong>Estado civil</strong>       <%=  @civil%><br>
+    <strong>Endereço</strong>       <%=  @endereco%><br>
+    <strong>Tipo de residência</strong><%=@tipo%><br>
+    <h3>Cobertura</h3>
+    <hr>
+    <strong>Cobertura contra incêndio/explosão</strong><%= @incendio%><br>
+    <strong>Cobertura contra vendaval/granizo</strong><%= @vendaval%><br>
+    <strong>Cobertura contra danos elétricos</strong><%= @eletricos%><br>
+    <strong>Cobertura contra terceiros</strong><%= @terceiros%><br>
+    <strong>outra cobertura</strong><%= @outros%><br>
+    </p>
+
+  </body>
+</html>

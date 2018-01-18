@@ -1,6 +1,4 @@
 Rails.application.routes.draw do
-
-
   
   namespace :corretora do
     get 'simulacoes/novo'
@@ -11,14 +9,25 @@ Rails.application.routes.draw do
   
   namespace :corretora do
     root to: "home#home" 
-    get  '/home'                => 'home#home',         :as => 'home'
 
-    get    '/simulacoes/novo'   => 'simulacoes#novo',           :as => 'novo_simulacao'
+    get  '/home'                => 'home#home',               :as => 'home'
+
+    get    '/simulacoes/auto'   => 'simulacoes#seguro_auto',  :as => 'seguro_auto'
+    post   '/enviar_auto'        => 'simulacoes#enviar_auto'
+
+    get    '/simulacoes/locacao'   => 'simulacoes#seguro_locacao',  :as => 'seguro_locacao'
+    post   '/enviar_locacao'        => 'simulacoes#enviar_locacao'
+
+    get    '/simulacoes/residencia'   => 'simulacoes#seguro_residencia',  :as => 'seguro_residencia'
+    post   '/enviar_residencia'        => 'simulacoes#enviar_residencia'
+
+    get    '/simulacoes/novo'   => 'simulacoes#novo',         :as => 'novo_simulacao'
     post   '/simulacoes'        => 'simulacoes#criar'
   end
 
   namespace :site do
     get  '/home'                => 'home#home',         :as => 'home'
+    get  '/home/quem_somos'                => 'home#quem_somos',         :as => 'quem_somos'
     get  '/veiculos'            => 'veiculos#veiculos', :as => 'veiculos'
     get  '/veiculos/:id'        => 'veiculos#exibir',   :as => 'veiculo'
     post '/veiculos'            => 'veiculos#enviar_proposta'

@@ -1,0 +1,95 @@
+<%= render  "menu" %>
+<div class="container">
+    <div class="col-md-6">
+    <%= form_tag(action: "enviar_auto", controller: "simulacoes") do %>
+
+        <div class="form-group">
+            <label>Veículo / Marca e modelo</label>
+            <%= text_field_tag :veiculo, nil, class: "form-control"%>
+        </div>     
+        
+        <div class="form-group">
+            <label>Ano de fabricação</label>
+            <%= text_field_tag :ano, nil, class: "form-control" %>
+        </div>
+    
+        <div class="form-group">
+            <label>Placa do veículo</label>
+            <%= text_field_tag :placa, nil, class: "form-control"%>
+        </div>
+
+        <div class="form-group">
+            <label>RENAVAM</label>
+            <%= text_field_tag :renavam, nil, class: "form-control" %>
+        </div>  
+
+        <div class="form-group">
+            <label>Nome do segurado</label>
+            <%= text_field_tag :nome, nil, class: "form-control", placeholder: "Digite seu nome" , required: true%>
+        </div>     
+        
+        <div class="form-group">
+            <label>E-mail</label>
+            <%= text_field_tag :email, nil, class: "form-control", placeholder: "Digite seu email" , required: true%>
+        </div>
+    
+        <div class="form-group">
+            <label>Telefone</label>
+            <%= text_field_tag :telefone, nil, class: "form-control", placeholder: "Digite seu telefone" , required: true%>
+        </div>
+
+        <div class="form-group">
+            <label>CPF</label>
+            <%= text_field_tag :cpf, nil, class: "form-control" %>
+        </div>     
+        
+        <div class="form-group">
+            <label>Data de nascimento</label>
+            <%= date_field_tag :nascimento, nil, class: "form-control" %>
+        </div>
+    
+        <div class="form-group">
+            <label>Data da primeira habilitação</label>
+            <%= date_field_tag :primeira, nil, class: "form-control" %>
+        </div>
+
+        <div class="form-group">
+            <label>Estado civil</label>
+            <%= select_tag :civil, options_for_select([["" , "" ],["Solteiro" , "Solteiro" ],["União estável" , "União estável" ], ["Outro", "Outro"]]), { class: "form-control"} %>
+        </div>     
+        
+        <div class="form-group">
+            <label>Profissão</label>
+            <%= text_field_tag :profissao, nil, class: "form-control" %>
+        </div>
+    
+        <div class="form-group">
+            <label>Endereço</label>
+            <%= text_field_tag :endereco, nil, class: "form-control" %>
+        </div>
+
+        <div class="form-group">
+            <label>Possui garagem em sua residência</label>
+            <%= select_tag :garagem_residencia, options_for_select([["" , "" ],["Sim" , "Sim" ],["Não" , "Não" ]]), { class: "form-control"} %>
+        </div>
+    
+        <div class="form-group">
+            <label>Possui garagem em seu trabalho</label>
+            <%= select_tag :garagem_trabalho, options_for_select([["" , "" ],["Sim" , "Sim" ],["Não" , "Não" ],["Não uso carro para trabalhar" , "Não uso carro para trabalhar" ]]), { class: "form-control"} %>
+        </div>
+
+        <div class="form-group">
+            <label>Deseja estender a cobertura para condutores na faixa etária de 18 a 25 anos</label>
+            <%= select_tag :estender, options_for_select([["" , "" ],["Sim" , "Sim" ],["Não" , "Não" ]]), { class: "form-control"} %>
+        </div>
+
+        <div class="form-group">
+            <%= submit_tag 'Enviar', class: "btn btn-primary" %>
+        </div>
+
+    <% end %>
+    </div>
+</div>
+
+
+

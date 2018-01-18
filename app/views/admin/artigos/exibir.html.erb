@@ -7,7 +7,9 @@
 </nav>
 <div class="card">
     <div class="card-body">
-
+        <div class="social-likes social-likes_vertical float-right mb-3" data-counters="no" data-url=central2.jelasticlw.com.br/site/artigos/<%= @artigo.id %> data-title="Veículo">
+            <button type="button" class="facebook btn btn-primary"> <i class="fa fa-share-alt" aria-hidden="true"></i> Compartilhar</button>
+        </div>
         <h3 class="card-title"><%= @artigo.titulo %></h3>
         <h5 class="card-subtitle mb-2 text-muted"><%= @artigo.created_at.strftime("%d/%m/%Y") %></h5>
         <hr>

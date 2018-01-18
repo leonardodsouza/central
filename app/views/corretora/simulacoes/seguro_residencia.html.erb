@@ -1,0 +1,114 @@
+<%= render  "menu" %>
+<div class="container">
+    <div class="col-md-6">
+    <%= form_tag(action: "enviar_residencia", controller: "simulacoes") do %>
+
+        <div class="form-group">
+            <label>Nome do segurado</label>
+            <%= text_field_tag :nome, nil, class: "form-control", placeholder: "Digite seu nome" , required: true%>
+        </div>     
+        
+        <div class="form-group">
+            <label>E-mail</label>
+            <%= text_field_tag :email, nil, class: "form-control", placeholder: "Digite seu email" , required: true%>
+        </div>
+    
+        <div class="form-group">
+            <label>Telefone</label>
+            <%= text_field_tag :telefone, nil, class: "form-control", placeholder: "Digite seu telefone" , required: true%>
+        </div>
+
+        <div class="form-group">
+            <label>CPF</label>
+            <%= text_field_tag :cpf, nil, class: "form-control" %>
+        </div>     
+        
+        <div class="form-group">
+            <label>Data de nascimento</label>
+            <%= date_field_tag :nascimento, nil, class: "form-control" %>
+        </div>
+
+        <div class="form-group">
+            <label>Estado civil</label>
+            <%= select_tag :civil, options_for_select([["Solteiro" , "Solteiro" ],["União estável" , "União estável" ], ["Outro", "Outro"]]), { class: "form-control"} %>
+        </div>  
+
+        <div class="form-group">
+            <label>Endereço</label>
+            <%= text_field_tag :endereco, nil, class: "form-control" %>
+        </div>
+
+        <div class="form-group">
+            <label>Tipo de residência</label>
+            <%= select_tag :tipo, options_for_select([["Casa alvenaria" , "Casa alvenaria" ],["Casa mista" , "Casa mista" ],["Apartamento" , "Apartamento" ]]), { class: "form-control"} %>
+        </div>
+
+        <h4>Coberturas</h4>
+    <hr>
+        <div class="form-group">
+            <div class="row">
+            <div class="col-md-6 ">
+                <label>Valor cobertura incêndio</label>
+            </div>
+            <div class="col-md-6">
+            <%= text_field_tag :incendio, nil, class: "form-control" %>
+            </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+                <div class="row">
+                        <div class="col-md-6 ">
+            <label>Valor cobertura vendaval / Granizo</label>
+            </div>
+
+                    <div class="col-md-6">
+            <%= text_field_tag :vendaval, nil, class: "form-control" %>
+                    </div>
+                    </div>
+
+        </div>
+
+        <div class="form-group">
+                <div class="row">
+                        <div class="col-md-6 ">
+            <label>Valor cobertura danos elétricos</label>
+            </div>
+            <div class="col-md-6">
+            <%= text_field_tag :eletricos, nil, class: "form-control" %>
+        </div>
+        </div>
+        </div>
+
+        <div class="form-group">
+                <div class="row">
+                        <div class="col-md-6 ">
+            <label>Valor cobertura contra terceiros</label>
+            </div>
+            <div class="col-md-6 ">
+            <%= text_field_tag :terceiros, nil, class: "form-control" %>
+        </div>
+        </div>
+
+        </div>
+
+        <div class="form-group">
+                <div class="row">
+                        <div class="col-md-6 ">
+            <label>Valor para outras coberturas</label>
+            </div>
+            <div class="col-md-6 ">
+            <%= text_field_tag :outros, nil, class: "form-control" %>
+        </div>
+        </div>
+        </div>
+
+        <div class="form-group mt-3">
+            <%= submit_tag 'Enviar', class: "btn btn-primary mb-3" %>
+        </div>
+    </div>
+    <% end %>
+</div>
+
+
+

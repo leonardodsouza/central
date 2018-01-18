@@ -26,7 +26,10 @@
           </li>
           <li class="nav-item">
             <a class="nav-link js-scroll-trigger" href="#condominio">CONDOMÍNIO</a>
-          </li>          
+          </li>      
+          <li class="nav-item">
+            <a class="nav-link js-scroll-trigger" href="#viagem">VIAGEM</a>
+          </li>      
           <li class="nav-item">
             <a class="nav-link js-scroll-trigger" href="#contato">CONTATO</a>
           </li>
@@ -41,7 +44,7 @@
     <div class="intro-text">
       <div class="intro-lead-in">Bem vindo a</div>
       <div class="intro-heading text-uppercase">Central corretora de Seguros</div>
-      <%= link_to  "SIMULADOR", corretora_novo_simulacao_path, remote: true, class: "btn btn-secondary btn-lg" %>
+      
     </div>
   </div>
 </header>
@@ -50,7 +53,7 @@
     <div class="container">
         <div class="row text-center text-white">
             <div class="col-md-12">
-                <h3 class="text-uppercase">Seguros especialmente elaborados para as suas necessídades</h3>
+                <h3 class="text-uppercase">Seguros especialmente elaborados para as suas necessidades</h3>
                 <hr class="divider"></hr>
             </div>
         </div>    
@@ -64,9 +67,9 @@
                 <%= image_tag  "about/1.jpg", class: "img-fluid img-thumbnail" %>
             </div>
             <div class="col-md-6">
-                <h1 class="text-uppercase">Para sua empresa</h1>
-                <p class="text-muted">O seguro empresarial foi criado especialmente para quem se preocupa com o seus negócio e quer segurança para sua empresa. Desenvolvido para ser a melhor opção de contratação para prestadores de serviços, estabelecimentos comerciais e atividades industriais, o seguro empresarial oferece diversas coberturas para proteger bem o seu negócio.</p>
-                <%= link_to  "SIMULADOR", corretora_novo_simulacao_path, remote: true, class: "btn btn-outline-secondary btn-lg" %>
+                <h1 class="text-uppercase">EMPRESARIAL</h1>
+                <p class="text-muted">O seguro empresarial foi criado especialmente para quem se preocupa com a segurança da sua empresa. Desenvolvido para ser a melhor opção de contratação para prestadores de serviços, estabelecimentos comerciais e atividades industriais, o seguro empresarial oferece diversas coberturas para proteger o seu negócio.</p>
+                
             </div>
         </div>
     </div>
@@ -76,9 +79,9 @@
     <div class="container">
         <div class="row">
             <div class="col-md-6">
-                <h1 class="text-uppercase">Para o seu atomóvel</h1>
-                <p class="text-muted">Com o seguro auto você tem Proteção para seu veículo e tranquilidade para você, com benefícios para facilitar o seu dia a dia e econimizar o seu tempo. O seguro auto oferece cobertura especial, que consideram sua rotina e hábitos de utilização do veículo. Com ele você tem mais vantagens por um preço justo e ainda conta com um atendimento ágil e eficaz no caso de sinisto.</p>
-                <%= link_to  "SIMULADOR", corretora_novo_simulacao_path, remote: true, class: "btn btn-outline-secondary btn-lg" %>
+                <h1 class="text-uppercase">AUTO</h1>
+                <p class="text-muted">Com o seguro auto você tem proteção para seu veículo e tranquilidade para você e sua família, com benefícios para facilitar o seu dia a dia e economizar o seu tempo. O seguro auto  oferece coberturas especiais, que consideram sua rotina e hábitos de utilização do veículo. Com ele você tem mais vantagens por um preço justo e ainda conta com um atendimento ágil e eficaz no caso de sinistro.</p>
+                <%= link_to  "SIMULADOR", corretora_seguro_auto_path, class: "btn btn-outline-secondary btn-lg" %>
             </div>
             <div class="col-md-6">
                 <%= image_tag  "about/2.jpg", class: "img-fluid img-thumbnail" %>
@@ -94,9 +97,9 @@
                 <%= image_tag  "about/3.jpg", class: "img-fluid img-thumbnail" %>
             </div>
             <div class="col-md-6">
-                <h1 class="text-uppercase">Para seus filhos</h1>
-                <p class="text-muted">O seguro educacional garante o estudo de crianças e adolescentes, do maternal até a conclusão do curso superior. Com a proteção financeira para auxiliar em caso de dificuldades dos pais ou responsáveis diante de uma situação de desemprego, morte ou invalidez, oferece diversas assistências aos alunos desde aulas particulares até assistência médica 24Horas trazendo tranquilidade para a Escola, Pais e Alunos.</p>
-                <%= link_to  "SIMULADOR", corretora_novo_simulacao_path, remote: true, class: "btn btn-outline-secondary btn-lg" %>
+                <h1 class="text-uppercase">EDUCACIONAL</h1>
+                <p class="text-muted">O seguro educacional garante o estudo de crianças e adolescentes, da educação infantil até a conclusão do curso superior. Com a proteção financeira para auxiliar em caso de dificuldades dos pais ou responsáveis diante de uma situação de desemprego, morte ou invalidez, oferece diversas assistências aos alunos desde aulas particulares até assistência médica 24 horas trazendo tranquilidade para a escola, pais e alunos.</p>
+                
             </div>
         </div>
     </div>
@@ -106,9 +109,9 @@
     <div class="container">
         <div class="row">
             <div class="col-md-6">
-                <h1 class="text-uppercase">Para sua residência</h1>
-                <p class="text-muted">Sua casa guarda sua história, as suas conquistas e tudo o que tem valor pra vacê. Por um valor muito pequeno, você protege o que tem grande valor para sua vida. E ainda conta com o mais completo pacote de serviços e assitência para resolver de um jeito simples e rápido aqueles probleminhas do dia a dia. Escolha o pacote que mais combina com sua necessidade e aproveite essa tranquilidade do seguro residencial.</p>
-                <%= link_to  "SIMULADOR", corretora_novo_simulacao_path, remote: true, class: "btn btn-outline-secondary btn-lg" %>
+                <h1 class="text-uppercase">RESIDENCIAL</h1>
+                <p class="text-muted">Sua casa guarda sua história, as suas conquistas e tudo o que tem valor pra você. Por um valor muito pequeno, você protege o que tem grande valor para sua vida. Ainda conta com o mais completo pacote de serviços e assistências para resolver de um jeito simples e rápido aqueles probleminhas do dia a dia. Escolha o pacote que mais combina com sua necessidade e aproveite essa tranquilidade do seguro residencial.</p>
+                <%= link_to  "SIMULADOR", corretora_seguro_residencia_path, class: "btn btn-outline-secondary btn-lg" %>
             </div>
             <div class="col-md-6">
                 <%= image_tag  "about/4.jpg", class: "img-fluid img-thumbnail" %>
@@ -124,9 +127,11 @@
                     <%= image_tag  "about/5.jpg", class: "img-fluid img-thumbnail" %>
             </div>
             <div class="col-md-6">
-                <h1 class="text-uppercase">Alugue sem fiador</h1>
-                <p class="text-muted">Amelhor garantia na hora de alugar seu imóvel. O seguro Aluguel é o seguro de fiança locatícia feito na medida certa para facilitar a vida de proprietários e imóveis, de imobiliárias e de inquilinos, substituindo com vantagens o fiador. Com ele, você tem a certeza de receber o aluguel e até os demais encargos da locação mesmo que o inquilino fique inadimplente.</p>
-                <%= link_to  "SIMULADOR", corretora_novo_simulacao_path, remote: true, class: "btn btn-outline-secondary btn-lg" %>
+                <h1 class="text-uppercase">ALUGUEL</h1>
+                <p class="text-muted">
+                    A melhor garantia na hora de alugar seu imóvel. O seguro aluguel é o seguro de fiança locatícia feito na medida certa para facilitar a vida de proprietários de imóveis, de imobiliárias e de inquilinos, substituindo com vantagens o fiador. Com ele, você tem a certeza do pagamento do aluguel e até dos demais encargos da locação. Além do inquilino não necessitar de fiador/avalista, conta com cobertura de seguro para instalações e consertos emergenciais com assistência 24 horas para manter o imóvel em ordem.
+                </p>
+                <%= link_to  "SIMULADOR", corretora_seguro_locacao_path, class: "btn btn-outline-secondary btn-lg" %>
             </div>
         </div>
     </div>
@@ -136,15 +141,33 @@
     <div class="container">
         <div class="row">
             <div class="col-md-6">
-                <h1 class="text-uppercase">Para condomínios</h1>
-                <p class="text-dark">Ideal para quem gosta de acumular vantagens e não problemas, o seguro Condomínio oferece coberturas que protegem o condomínio, o síndico, os funcionários e o patrimônio dos condôminos. Contempla condomínios residenciais, comerciais, mistos, de escritório e/ou consultórios, flats ou apart-hotéis, com benefícions na contratação emergenciais gratuitos.</p>
-                <%= link_to  "SIMULADOR", corretora_novo_simulacao_path, remote: true, class: "btn btn-outline-secondary btn-lg" %>
+                <h1 class="text-uppercase">CONDOMÍNIO</h1>
+                <p class="text-dark">Ideal para quem gosta de acumular vantagens e não problemas, o seguro condomínio oferece coberturas que protegem o condomínio, o síndico, os funcionários e o patrimônio dos condôminos. Contempla condomínios residenciais, comerciais, mistos, de escritório e/ou consultórios, flats ou apart-hotéis, com benefícios na contratação e serviços emergenciais gratuitos.</p>
+                
             </div>
             <div class="col-md-6">
                 <%= image_tag  "about/6.jpg", class: "img-fluid img-thumbnail img-thumbnail mb-3" %>
             </div>
         </div>
     </div>
+</section>
+
+
+<section id="viagem" class="section">
+  <div class="container">
+      <div class="row">
+          <div class="col-md-6">
+              <%= link_to  corretora_novo_simulacao_path, remote: true do %>
+                  <%= image_tag  "about/8.jpg", class: "img-fluid img-thumbnail" %>
+               <%end%>   
+          </div>
+          <div class="col-md-6">
+              <h1 class="text-uppercase">VIAGEM</h1>
+              <p class="text-muted">Para que você possa viajar com segurança temos o seguro viagem. É um serviço de assistência ao viajante para ser utilizado em casos de emergência, tendo por finalidade cobrir possíveis custos relacionados a quaisquer incidentes que possam ocorrer durante a viagem (extravio de bagagens, acidentes pessoais, repatriação e outras coberturas). </p>
+              <%= link_to  "SIMULADOR", corretora_novo_simulacao_path, remote: true, class: "btn btn-outline-secondary btn-lg" %>
+          </div>
+      </div>
+  </div>
 </section>
 
 <section class="py-5">

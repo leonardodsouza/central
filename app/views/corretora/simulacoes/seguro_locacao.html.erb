@@ -1,0 +1,334 @@
+<%= render  "menu" %>
+<div class="container">
+    <div class="col-md-12">
+    <%= form_tag(action: "enviar_locacao", controller: "simulacoes") do %>
+
+    <ul class="nav nav-tabs" id="myTab" role="tablist">
+        <li class="nav-item">
+            <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Solicitante</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Imóvel</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false">Inquilino / locatário</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" id="contact-tab" data-toggle="tab" href="#conjuge" role="tab" aria-controls="conjuge" aria-selected="false">Cônjuge</a>
+        </li>
+    </ul>
+
+    <div class="tab-content" id="myTabContent">
+
+    <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+        <h4>Solicitante</h4>
+        <hr>
+
+        <div class="form-group">
+            <label>Nome do solicitante</label>
+            <%= text_field_tag :nome, nil ,  class: "form-control", required: true%>
+        </div>     
+        
+        <div class="form-group">
+            <label>E-mail</label>
+            <%= text_field_tag :email, nil , class: "form-control",  required: true%>
+        </div>
+    
+        <div class="form-group">
+            <label>Telefone</label>
+            <%= text_field_tag :telefone, nil ,  class: "form-control", required: true%>
+        </div>
+</div>
+
+<div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+        <h4>Imóvel</h4>
+        <hr>
+
+        <div class="form-group">
+            <label>Imóvel pretendido</label>
+            <%= select_tag :imovel, options_for_select([["" , "" ],["Casa" , "Casa" ],["Apartamento" , "Apartamento" ], ["Comercial", "Comercial"]]), { class: "form-control"} %>
+        </div>  
+        <div class="form-group">
+                <label>Endereço do imóvel</label>
+                <%= text_field_tag :endereco_imovel, nil ,  class: "form-control", required: true%>
+                <small>Rua, número, bairro, cidade - estado</small>
+            </div>
+    
+            <div class="form-group">
+                    <label>Proprietário</label>
+                    <%= text_field_tag :proprietario, nil ,  class: "form-control", required: true%>
+                </div>
+                <div class="form-group">
+                        <label>Imobiliária</label>
+                        <%= text_field_tag :imobiliaria, nil ,  class: "form-control", required: true%>
+                    </div>
+
+        <h4>Valor das coberturas</h4>
+        <hr>
+        <div class="form-group">
+            <div class="row">
+                <div class="col-md-2 ">
+                    <label>Aluguel</label>
+                </div>
+                <div class="col-md-10">
+                    <%= text_field_tag :aluguel, nil , class: "form-control" , required: true%>
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="row">
+                <div class="col-md-2 ">
+                    <label>IPTU</label>
+                </div>
+                <div class="col-md-10">
+                    <%= text_field_tag :iptu, nil , class: "form-control", required: true %>
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="row">
+                <div class="col-md-2 ">
+                    <label>Água</label>
+                </div>
+                <div class="col-md-10">
+                    <%= text_field_tag :agua, nil , class: "form-control", required: true %>
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="row">
+                <div class="col-md-2 ">
+                    <label>Condomínio</label>
+                </div>
+                <div class="col-md-10 ">
+                    <%= text_field_tag :condominio, nil , class: "form-control", required: true %>
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="row">
+                <div class="col-md-2 ">
+                    <label>Luz</label>
+                </div>
+                <div class="col-md-10 ">
+                    <%= text_field_tag :luz, nil , class: "form-control", required: true %>
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="row">
+                <div class="col-md-2 ">
+                    <label>Gás</label>
+                </div>
+                <div class="col-md-10 ">
+                    <%= text_field_tag :gas, nil , class: "form-control", required: true %>
+                </div>
+            </div>
+        </div>
+</div>
+<div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
+        <h4>Inquilino / locatário</h4>
+        <hr>
+
+        <div class="form-group">
+            <label>Nome do inquilino</label>
+            <%= text_field_tag :inquilino, nil ,  class: "form-control", required: true%>
+        </div>     
+        <div class="form-group">
+            <label>Data de nascimento</label>
+            <%= date_field_tag :nascimento, nil , class: "form-control", required: true %>
+        </div>
+
+        <div class="form-group">
+            <label>Sexo</label>
+            <%= select_tag :sexo, options_for_select([["" , "" ],["Masculino" , "Masculino" ],["Feminino" , "Feminino" ]]), { class: "form-control"} %>
+        </div> 
+
+        <div class="form-group">
+            <label>Imóvel</label>
+            <%= select_tag :imovel_inquilino, options_for_select([["" , "" ],["Próprio" , "Próprio" ],["Alugado" , "Alugado" ]]), { class: "form-control"} %>
+        </div> 
+
+        <div class="form-group">
+            <label>Endereço completo</label>
+            <%= text_field_tag :endereco, nil , class: "form-control",  required: true%>
+            <small>Rua, número, bairro, cidade - estado</small>
+        </div>
+    
+        <div class="form-group">
+            <label>CPF</label>
+            <%= text_field_tag :cpf, nil ,  class: "form-control", required: true%>
+        </div>
+
+        <div class="form-group">
+            <label>Número do RG / Data emissão / Órgão emissor</label>
+            <%= text_field_tag :rg, nil , class: "form-control", required: true%>
+            <small>Ex.: 9999999999 - dd/mm/aaaa - SJS/RS</small>
+        </div>
+        
+        <div class="form-group">
+            <label>Estado civil</label>
+            <%= select_tag :civil, options_for_select([["" , "" ],["Solteiro" , "Solteiro" ],["União estável" , "União estável" ], ["Outro", "Outro"]]), { class: "form-control"} %>
+        </div> 
+
+        <div class="form-group">
+            <label>E-mail</label>
+            <%= text_field_tag :email_inquilino, nil , class: "form-control",  required: true%>
+        </div>
+    
+        <div class="form-group">
+            <label>Telefones</label>
+            <%= text_field_tag :telefone_inquilino, nil ,  class: "form-control", required: true%>
+            <small>(55) 999999999 / (55) 999999999 </small>
+        </div>
+        <h4>Dados profissionais</h4>
+        <hr>
+        <div class="form-group">
+            <label>Empresa / CNPJ</label>
+            <%= text_field_tag :empresa, nil ,  class: "form-control", required: true%>
+            <small>Digite o nome da empresa e o CNPJ</small>
+        </div>
+        <div class="form-group">
+            <label>Endereço da empresa</label>
+            <%= text_field_tag :endereco_empresa, nil ,  class: "form-control", required: true%>
+            <small>Rua, número, bairro, cidade - estado</small>
+        </div>
+        <div class="form-group">
+                <label>Telefones da empresa</label>
+                <%= text_field_tag :telefone_empresa, nil ,  class: "form-control", required: true%>
+                <small>(99) 999999999 / (99) 999999999 </small>
+            </div>
+        <div class="form-group">
+            <label>Data da admissão</label>
+            <%= date_field_tag :admissao, nil , class: "form-control", required: true %>
+        </div>
+
+        <div class="form-group">
+            <label>Renda mensal</label>
+            <%= text_field_tag :renda_inquilino, nil ,  class: "form-control", required: true%>
+        </div>
+
+        <h4>Referências bancárias</h4>
+        <hr>
+        <div class="form-group">
+            <label>Banco</label>
+            <%= text_field_tag :banco, nil ,  class: "form-control", required: true%>
+        </div>
+        <div class="form-group">
+            <label>Gerente</label>
+            <%= text_field_tag :gerente, nil ,  class: "form-control", required: true%>
+        </div>
+        <div class="form-group">
+            <label>Telefones da empresa</label>
+            <%= text_field_tag :telefone_banco, nil ,  class: "form-control", required: true%>
+            <small>(99) 999999999 / (99) 999999999 </small>
+        </div>
+        <div class="form-group">
+            <label>Endereco do banco</label>
+            <%= text_field_tag :endereco_banco, nil ,  class: "form-control", required: true%>
+            <small>Rua, número, bairro, cidade - estado</small>
+        </div>
+
+        <div class="form-group">
+            <label>Conta corrente</label>
+            <%= text_field_tag :conta, nil ,  class: "form-control", required: true%>
+        </div>
+
+        <div class="form-group">
+                <label>Cliente desde</label>
+                <%= date_field_tag :desde, nil , class: "form-control" , required: true%>
+            </div>
+            <h4>Referências pessoais</h4>
+            <hr>
+            <div class="form-group">
+            <label>Referência 1</label>
+            <%= text_field_tag :referencia1, nil ,  class: "form-control", required: true%>
+            <small>Digite o nome e telefone</small>
+            </div>
+            <div class="form-group">
+                <label>Referência 2</label>
+                <%= text_field_tag :referencia2, nil ,  class: "form-control", required: true%>
+                <small>Digite o nome e telefone</small>
+            </div>
+</div>
+
+<div class="tab-pane fade" id="conjuge" role="tabpanel" aria-labelledby="contact-tab">
+       <h4>Dados do cônjuge</h4>
+        <hr>
+
+        <div class="form-group">
+            <label>Nome do cônjuge</label>
+            <%= text_field_tag :conjuge, nil ,  class: "form-control", required: true%>
+        </div>     
+        <div class="form-group">
+            <label>Data de nascimento</label>
+            <%= date_field_tag :nascimento_conjuge, nil , class: "form-control" , required: true%>
+        </div>
+
+    
+        <div class="form-group">
+            <label>CPF</label>
+            <%= text_field_tag :cpf_conjuge, nil ,  class: "form-control", required: true%>
+        </div>
+
+        <div class="form-group">
+            <label>Número do RG / Data emissão / Órgão emissor</label>
+            <%= text_field_tag :rg_conjuge, nil , class: "form-control", required: true%>
+            <small>Ex.: 9999999999 - dd/mm/aaaa - SJS/RS</small>
+        </div>
+        
+ 
+        <div class="form-group">
+            <label>E-mail</label>
+            <%= text_field_tag :email_conjuge, nil , class: "form-control",  required: true%>
+        </div>
+    
+        <div class="form-group">
+            <label>Telefones</label>
+            <%= text_field_tag :telefone_conjuge, nil ,  class: "form-control", required: true%>
+            <small>(55) 999999999 / (55) 999999999 </small>
+        </div>
+        <h4>Dados profissionais do cônjuge</h4>
+        <hr>
+        <div class="form-group">
+            <label>Empresa / CNPJ</label>
+            <%= text_field_tag :empresa_conjuge, nil ,  class: "form-control", required: true%>
+            <small>Digite o nome da empresa e o CNPJ</small>
+        </div>
+        <div class="form-group">
+            <label>Endereço da empresa</label>
+            <%= text_field_tag :endereco_empresa_conjuge, nil ,  class: "form-control", required: true%>
+            <small>Rua, número, bairro, cidade - estado</small>
+        </div>
+        <div class="form-group">
+                <label>Telefones da empresa</label>
+                <%= text_field_tag :telefone_empresa_conjuge, nil ,  class: "form-control", required: true%>
+                <small>(99) 999999999 / (99) 999999999 </small>
+            </div>
+        <div class="form-group">
+            <label>Data da admissão</label>
+            <%= date_field_tag :admissao_conjuge, nil , class: "form-control" , required: true%>
+        </div>
+
+        <div class="form-group">
+            <label>Renda mensal</label>
+            <%= text_field_tag :renda_conjuge, nil ,  class: "form-control", required: true%>
+        </div>
+    </div>
+
+    </div>
+        <div class="form-group mt-3 mb-3">
+            <%= submit_tag 'Enviar', class: "btn btn-primary" %>
+        </div>
+
+    <% end %>
+    </div>
+</div>
+
+
+
