@@ -6,7 +6,7 @@ class EmailMailer < ActionMailer::Base
         @email = email
         @telefone = telefone
         @mensagem = mensagem
-        mail(to: 'centraldeveiculosrs@yahoo.com.br', subject: 'Contato (Veículos)')
+        mail(to: 'centralvec@yahoo.com', subject: 'Contato (Veículos)')
     end
 
     def proposta(link, modelo, nome, email, telefone, mensagem)
@@ -16,7 +16,7 @@ class EmailMailer < ActionMailer::Base
         @email = email
         @telefone = telefone
         @mensagem = mensagem
-        mail(to: 'centraldeveiculosrs@yahoo.com.br', subject: 'Contato (veículos)')
+        mail(to: 'centralvec@yahoo.com', subject: 'Contato (veículos)')
     end
 
     def corretora(nome, email, telefone, mensagem)
@@ -24,7 +24,7 @@ class EmailMailer < ActionMailer::Base
         @email = email
         @telefone = telefone
         @mensagem = mensagem
-        mail(to: 'centraldeveiculosrs@yahoo.com.br', subject: 'Contato (Corretora)')
+        mail(to: 'centralvec@yahoo.com', subject: 'Contato (Corretora)')
     end
 
     def recuperar_senha(usuario)
@@ -49,7 +49,7 @@ class EmailMailer < ActionMailer::Base
         @garagem_residencia = garagem_residencia
         @garagem_trabalho = garagem_trabalho
         @estender = estender
-        mail(to: 'centraldeveiculosrs@yahoo.com.br', subject: 'Contato (Corretora)')
+        mail(to: 'centralvec@yahoo.com', subject: 'Contato (Corretora)')
     end
 
     def enviar_email_residencia(nome, email, telefone, cpf, nascimento, civil, endereco, tipo, incendio, vendaval, eletricos, terceiros, outros)
@@ -66,7 +66,7 @@ class EmailMailer < ActionMailer::Base
         @eletricos = eletricos
         @terceiros = terceiros
         @outros = outros  
-        mail(to: 'centraldeveiculosrs@yahoo.com.br', subject: 'Contato (Corretora)')
+        mail(to: 'centralvec@yahoo.com', subject: 'Contato (Corretora)')
     end
 
     def enviar_email_locacao(nome, email, telefone, imovel, aluguel, iptu, agua, condominio, luz, gas,
@@ -119,7 +119,7 @@ class EmailMailer < ActionMailer::Base
         @admissao_conjuge=admissao_conjuge
         @renda_conjuge=renda_conjuge
 
-        mail(to: 'centraldeveiculosrs@yahoo.com.br', subject: 'Contato (Corretora)')
+        mail(to: 'centralvec@yahoo.com', subject: 'Contato (Corretora)')
     end
 
 end

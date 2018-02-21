@@ -53,6 +53,7 @@ Rails.application.routes.draw do
     get    '/dashboard'                => 'dashboard#dashboard',     :as => 'dashboard'
     get    '/graficos'                 => 'graficos#graficos',       :as => 'graficos'
     
+    get    '/veiculos/imprimir'        => 'veiculos#imprimir',       :as => 'imprimir_veiculos'
     get    '/veiculos'                 => 'veiculos#veiculos',       :as => 'veiculos'
     get    '/veiculos/novo'            => 'veiculos#novo',           :as => 'novo_veiculo'
     get    '/veiculos/:id'             => 'veiculos#exibir',         :as => 'veiculo'

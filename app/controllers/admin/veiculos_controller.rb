@@ -10,6 +10,12 @@ class Admin::VeiculosController < ApplicationController
         @caminhoes = Veiculo.where('categoria = ?','Caminhão').order(created_at: :desc)
     end
 
+    def imprimir
+        @veiculos = Veiculo.all.order(created_at: :desc)
+        render pdf: "imprimir"
+    end
+
+
     def exibir
     end
 
