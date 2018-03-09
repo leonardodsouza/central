@@ -37,6 +37,11 @@
   </div>
 
   <div class="form-group">
+    <%= form.label :publicar %>
+    <%= form.select :publicar ,[["Sim", "sim"],["Não", "não"]], {prompt: "Publicar dica ?"},{ class: "form-control"} %>
+  </div>
+
+  <div class="form-group">
   <%= form.submit class: "btn btn-primary" %>
   <%= link_to  "Cancelar", admin_clientes_path, class: "btn btn-secondary"  %>
   </div>

@@ -7,6 +7,8 @@ class Site::HomeController < ApplicationController
     @banner_01 = Banner.first
     @banner_02 = Banner.second
     @banner_03 = Banner.third
+
+    @banners = Banner.all
   end
 
   def quem_somos

@@ -47,6 +47,6 @@ class Admin::ClientesController < ApplicationController
         end
 
         def cliente_params
-            params.require(:cliente).permit(:nome, :texto, :foto, :posicao)
+            params.require(:cliente).permit(:nome, :texto, :foto, :posicao, :publicar)
         end
 end
