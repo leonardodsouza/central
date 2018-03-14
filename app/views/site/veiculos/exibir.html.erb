@@ -55,7 +55,7 @@
                         <%= image_tag veiculo.foto.url(:medium), class:"card-img-top" %>
                     <%end%>    
                     <div class="card-body">
-                        <h6 class="card-title">R$ <%= veiculo.modelo %></h6>
+                        <h6 class="card-title"><%= veiculo.modelo %></h6>
                         <h6 class="card-subtitle mb-2 text-muted"><%= veiculo.tipo %></h6>
                         <%= link_to  "Descrição", site_veiculo_path(veiculo), class: "btn btn-secondary btn-block" %>
                     </div>
